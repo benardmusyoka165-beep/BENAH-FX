@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1220">
+<title>Benah FX | Deriv Dashboard</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#152238;--line:#263750;--text:#edf4ff;--muted:#91a4bf;--green:#45e0a0;--blue:#6aa8ff;--red:#ff7185}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#173056 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit}.wrap{max-width:1180px;margin:auto;padding:24px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--green),#5d9cff);display:grid;place-items:center;color:#07111d;font-weight:900;font-size:20px}.brand h1{font-size:22px;margin:0;letter-spacing:.4px}.brand p{margin:0;color:var(--muted);font-size:12px}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;background:var(--panel2);color:var(--text);text-decoration:none;cursor:pointer;font-weight:700}.btn.primary{background:var(--green);border-color:var(--green);color:#07111d}.btn:hover{filter:brightness(1.08)}.notice{border:1px solid #31517a;background:#10243c;color:#c9ddfb;padding:13px 15px;border-radius:12px;margin-bottom:22px;font-size:13px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:1.6px;font-weight:800;text-transform:uppercase}.hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:24px 0}.hero h2{font-size:clamp(27px,4vw,40px);line-height:1.1;margin:8px 0}.hero p{margin:0;color:var(--muted)}.badge{display:inline-flex;align-items:center;gap:7px;border:1px solid #7b6330;background:#2c2517;color:#ffdc8a;border-radius:30px;padding:7px 11px;font-size:12px;font-weight:800}.dot{width:7px;height:7px;border-radius:50%;background:#ffca54}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:linear-gradient(150deg,rgba(21,34,56,.96),rgba(15,25,42,.96));border:1px solid var(--line);border-radius:17px;padding:19px;min-width:0}.metric-label{color:var(--muted);font-size:13px}.metric{font-size:27px;font-weight:800;margin:8px 0 4px;letter-spacing:-.6px}.sub{color:var(--muted);font-size:12px}.two{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:14px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.card h3{margin:0;font-size:16px}.tag{font-size:11px;color:var(--green);background:#15372f;border-radius:7px;padding:5px 8px;font-weight:800}.chart{height:220px;position:relative;overflow:hidden;border-radius:10px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 43px,#24344a 44px),repeating-linear-gradient(to right,transparent 0,transparent 70px,#1d2b40 71px)}.chart svg{width:100%;height:100%;display:block}.chart-note{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:10px}.account-row{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.account-row:last-child{border-bottom:0}.account-row strong{display:block}.account-row span{color:var(--muted);font-size:12px}.status{font-size:12px;color:#ffdc8a}.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick a{display:block;text-align:center;padding:14px 10px;border:1px solid var(--line);background:#101b2c;border-radius:11px;text-decoration:none;font-weight:700}.quick a span{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:4px}.bottom{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.checklist{margin:0;padding-left:18px;color:var(--muted)}.checklist li{margin:9px 0}.foot{padding:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}.smallprint{font-size:12px;color:var(--muted);margin-top:12px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.bottom{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}}
+@media(max-width:460px){.wrap{padding:15px}.grid{gap:9px}.card{padding:14px}.metric{font-size:22px}.btn{padding:10px 12px}.brand h1{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">B</div><div><h1>BENAH FX</h1><p>DERIV ACCOUNT DASHBOARD</p></div></div>
+    <div class="actions">
+      <a class="btn" href="https://deriv.com/" target="_blank" rel="noopener">Open Deriv ↗</a>
+      <button class="btn primary" id="connectBtn">Connect Deriv account</button>
+    </div>
+  </header>
+  <div class="notice"><strong>Preview mode:</strong> The figures and chart below are sample data, not your real account information. Live account connection is not enabled until you register a Deriv application and configure its secure OAuth callback.</div>
+  <section class="hero">
+    <div><div class="eyebrow">Your trading workspace</div><h2>Trade with a plan.<br>Track every move.</h2><p>A clean place to monitor your Deriv account and trading activity.</p></div>
+    <div class="badge"><span class="dot"></span> DEMO PREVIEW</div>
+  </section>
+  <section class="grid">
+    <div class="card"><div class="metric-label">Account balance</div><div class="metric">—</div><div class="sub">Connect account to load balance</div></div>
+    <div class="card"><div class="metric-label">Open positions</div><div class="metric">—</div><div class="sub">Live portfolio not connected</div></div>
+    <div class="card"><div class="metric-label">Today's profit / loss</div><div class="metric">—</div><div class="sub">Requires account data</div></div>
+    <div class="card"><div class="metric-label">Account type</div><div class="metric">Not linked</div><div class="sub">Demo or real account</div></div>
+  </section>
+  <section class="two">
+    <div class="card">
+      <div class="card-head"><h3>Market overview</h3><span class="tag">ILLUSTRATION</span></div>
+      <div class="chart" aria-label="Illustrative chart, not live market data">
+        <svg viewBox="0 0 700 220" preserveAspectRatio="none" role="img" aria-label="Illustrative rising and falling price line">
+          <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#45e0a0" stop-opacity=".23"/><stop offset="100%" stop-color="#45e0a0" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 166 L35 148 L70 158 L105 122 L140 137 L175 98 L210 112 L245 78 L280 92 L315 61 L350 84 L385 48 L420 69 L455 40 L490 58 L525 33 L560 53 L595 27 L630 42 L665 18 L700 30 L700 220 L0 220Z" fill="url(#area)"/>
+          <polyline points="0,166 35,148 70,158 105,122 140,137 175,98 210,112 245,78 280,92 315,61 350,84 385,48 420,69 455,40 490,58 525,33 560,53 595,27 630,42 665,18 700,30" fill="none" stroke="#45e0a0" stroke-width="3" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+      <div class="chart-note"><span>Illustrative price movement</span><span>Not live data</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Account connection</h3><span class="tag">SECURE SETUP</span></div>
+      <div class="account-row"><div><strong>Deriv account</strong><span>Use official authorization</span></div><span class="status">Not connected</span></div>
+      <div class="account-row"><div><strong>Balance & portfolio</strong><span>Shown after successful connection</span></div><span class="status">Pending</span></div>
+      <div class="account-row"><div><strong>Trading actions</strong><span>Not included in this preview</span></div><span class="status">Disabled</span></div>
+      <p class="smallprint">Benah FX does not ask for or store your Deriv password. Never share your password or API token in chat.</p>
+      <button class="btn primary" style="width:100%;margin-top:10px" id="setupBtn">View connection setup</button>
+    </div>
+  </section>
+  <section class="bottom">
+    <div class="card"><div class="card-head"><h3>Quick links</h3></div><div class="quick">
+      <a href="https://deriv.com/" target="_blank" rel="noopener">Deriv home <span>Official platform</span></a>
+      <a href="https://developers.deriv.com/" target="_blank" rel="noopener">Developer portal <span>Register your app</span></a>
+      <a href="https://developers.deriv.com/docs/intro/oauth/" target="_blank" rel="noopener">OAuth guide <span>Secure account linking</span></a>
+      <a href="https://developers.deriv.com/docs/intro/api-overview/" target="_blank" rel="noopener">API documentation <span>Account & market data</span></a>
+    </div></div>
+    <div class="card"><div class="card-head"><h3>To activate live data</h3><span class="tag">NEXT STEPS</span></div>
+      <ol class="checklist"><li>Register Benah FX as an app in the Deriv developer portal.</li><li>Deploy this site on an HTTPS domain and register its exact callback URL.</li><li>Implement Deriv OAuth 2.0 with PKCE and server-side token exchange.</li><li>Request only the permissions needed to read your account and portfolio.</li></ol>
+      <p class="smallprint">This starter page is not affiliated with or endorsed by Deriv. Trading carries financial risk.</p>
+    </div>
+  </section>
+  <footer class="foot">© <span id="year"></span> Benah FX · Independent dashboard concept · Not financial advice</footer>
+</div>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+function setup(){alert('To connect live account data, first register Benah FX in the Deriv developer portal. You will need an app/client ID, a deployed HTTPS URL, and an OAuth callback. This preview does not collect credentials or connect to your account yet.');}
+document.getElementById('connectBtn').addEventListener('click', setup);
+document.getElementById('setupBtn').addEventListener('click', setup);
+</script>
+</body>
+</html>
